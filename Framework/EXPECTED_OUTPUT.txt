@@ -1,0 +1,31 @@
+========================================
+XOR-Based Encryption System
+========================================
+
+========================================
+Running Test File: Testcases/rigorous/testcases_rigorous.txt
+========================================
+
+--- Command 1: ENCRYPT Testcases/rigorous/INPUT3.txt Testcases/rigorous/key_3.txt ENCRYPTED.bin ---
+ENCRYPT_START
+ENCRYPT:Input=Testcases/rigorous/INPUT3.txt Key=Testcases/rigorous/key_3.txt Output=ENCRYPTED.bin Size=4
+ENCRYPT:SUCCESS
+ENCRYPT_END
+
+--- Command 2: DECRYPT ENCRYPTED.bin Testcases/rigorous/key_3.txt OUTPUT.txt ---
+DECRYPT_START
+DECRYPT:Input=ENCRYPTED.bin Key=Testcases/rigorous/key_3.txt Output=OUTPUT.txt Size=4
+DECRYPT:SUCCESS
+DECRYPT_END
+
+--- Command 3: VERIFY Testcases/rigorous/INPUT3.txt OUTPUT.txt ---
+VERIFY_START
+VERIFY:Comparing Testcases/rigorous/INPUT3.txt and OUTPUT.txt
+VERIFY:Files match - Decryption successful!
+VERIFY:SUCCESS
+VERIFY_END
+
+========================================
+Test File Complete: Testcases/rigorous/testcases_rigorous.txt
+========================================
+
