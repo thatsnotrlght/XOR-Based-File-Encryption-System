@@ -1,0 +1,4 @@
+# Simple Test Case - 2x2 XOR Matrix
+ENCRYPT Testcases/simple/INPUT1.txt Testcases/simple/key_1.txt ENCRYPTED.bin
+DECRYPT ENCRYPTED.bin Testcases/simple/key_1.txt OUTPUT.txt
+VERIFY Testcases/simple/INPUT1.txt OUTPUT.txt

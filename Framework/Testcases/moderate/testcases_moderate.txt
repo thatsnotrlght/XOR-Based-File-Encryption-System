@@ -1,0 +1,4 @@
+# Moderate Test Case - 3x3 XOR Matrix
+ENCRYPT Testcases/moderate/INPUT2.txt Testcases/moderate/key_2.txt ENCRYPTED.bin
+DECRYPT ENCRYPTED.bin Testcases/moderate/key_2.txt OUTPUT.txt
+VERIFY Testcases/moderate/INPUT2.txt OUTPUT.txt

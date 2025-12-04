@@ -1,0 +1,4 @@
+# Rigorous Test Case - 4x4 XOR Matrix
+ENCRYPT Testcases/rigorous/INPUT3.txt Testcases/rigorous/key_3.txt ENCRYPTED.bin
+DECRYPT ENCRYPTED.bin Testcases/rigorous/key_3.txt OUTPUT.txt
+VERIFY Testcases/rigorous/INPUT3.txt OUTPUT.txt

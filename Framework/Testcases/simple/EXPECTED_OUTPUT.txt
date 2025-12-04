@@ -1,0 +1,30 @@
+========================================
+XOR-Based Encryption System
+========================================
+
+========================================
+Running Test File: Testcases/simple/testcases_simple.txt
+========================================
+
+--- Command 1: ENCRYPT Testcases/simple/INPUT1.txt Testcases/simple/key_1.txt ENCRYPTED.bin ---
+ENCRYPT_START
+ENCRYPT:Input=Testcases/simple/INPUT1.txt Key=Testcases/simple/key_1.txt Output=ENCRYPTED.bin Size=2
+ENCRYPT:SUCCESS
+ENCRYPT_END
+
+--- Command 2: DECRYPT ENCRYPTED.bin Testcases/simple/key_1.txt OUTPUT.txt ---
+DECRYPT_START
+DECRYPT:Input=ENCRYPTED.bin Key=Testcases/simple/key_1.txt Output=OUTPUT.txt Size=2
+DECRYPT:SUCCESS
+DECRYPT_END
+
+--- Command 3: VERIFY Testcases/simple/INPUT1.txt OUTPUT.txt ---
+VERIFY_START
+VERIFY:Comparing Testcases/simple/INPUT1.txt and OUTPUT.txt
+VERIFY:Files match - Decryption successful!
+VERIFY:SUCCESS
+VERIFY_END
+
+========================================
+Test File Complete: Testcases/simple/testcases_simple.txt
+========================================
