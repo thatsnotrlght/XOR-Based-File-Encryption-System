@@ -35,16 +35,25 @@ int encryptFile(const char* inputFile, const char* outputFile, int** matrix, int
     
     // TODO: Validate input parameters
     // Check for NULL pointers and valid size range
-    
+    if (inputFile == NULL || outputFile == NULL || matrix == NULL || size > MAX_MATRIX_SIZE || size < MIN_MATRIX_SIZE) {
+        return FAILURE;
+    }
     
     // TODO: Open input file for reading (text mode)
     // Check if fopen succeeded
-    
+    FILE *input = fopen(inputFile, "r");
+    if(input == NULL) {
+        return FAILURE;
+    }
     
     // TODO: Open output file for writing (⚠️ BINARY mode "wb")
     // Check if fopen succeeded
     // If it fails, close input file first
-    
+    FILE *output = fopen(outputFile, "wb");
+    if(output == NULL) {
+        fclose(input);
+        return FAILURE;
+    }
     
     // TODO: Implement encryption loop
     // - Use fgetc() to read bytes
@@ -53,8 +62,28 @@ int encryptFile(const char* inputFile, const char* outputFile, int** matrix, int
     // - Apply XOR operation
     // - Use fputc() to write encrypted bytes
     // - Handle fputc errors
-    
+    int ch;
+    int count = 0;
+
+    while ((ch = fgetc(input)) != EOF) {
+        int row = (count / size) % size;
+        int col = count % size;
+
+        int encryptedByte = ch ^ matrix[row][col];
+
+        if (fputc(encryptedByte, output) == EOF) {
+            fclose(input);
+            fclose(output);
+            return FAILURE;
+        }
+
+        count++;
+    }
     
     // TODO: Cleanup
     // Close both files
+    fclose(input);
+    fclose(output);
+
+    return SUCCESS;
 }
